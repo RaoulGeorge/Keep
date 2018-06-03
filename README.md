@@ -1,2 +1,2 @@
 # Keep
-React version of Google's Keep
+React version of Google's Keep.
