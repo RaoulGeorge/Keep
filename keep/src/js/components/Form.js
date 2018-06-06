@@ -5,7 +5,7 @@ import { addArticle } from "../actions/index";
 
 const mapDispatchToProps = dispatch => {
 	return {
-		addArticle: article => dispatch(addArticle(article));
+		addArticle: article => dispatch(addArticle(article))
 	};
 };
 
