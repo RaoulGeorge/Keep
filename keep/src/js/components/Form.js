@@ -26,14 +26,18 @@ class ConnectedForm extends Component {
 	}
 
 	handleSubmit (event) {
-		
+		event.preventDefault();
+		const { title } = this.state;
+		const id = uuidv1();
+		this.props.addArticle( {title, id});
+		this.setState({title: ""});
 	}
 
 	render() {
 		const { title } = this.state;
 
 		return (
-			<form onSumbit={this.handleSubmit}>
+			<form onSubmit={this.handleSubmit}>
 				<div className="form-group">
           			<label htmlFor="title">Title</label>
 					<input
