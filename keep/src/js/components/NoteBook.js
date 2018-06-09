@@ -8,9 +8,9 @@ const mapStateToProps = state => {
 
 const ConnectedNoteBook = ({notes}) => (
 	<div>
-	{notes.map(note => (
-		<Note details={ this.props.note } />
-	))}
+		{notes.map(note => (
+			<Note details={ note } />
+		))}
 	</div>
 );
 

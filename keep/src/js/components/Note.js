@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state, ownProps) => {
-	return { note: state.notes[ownProps.details.id] };
+	return { note: state.notes.filter(note=> { return note.id == ownProps.details.id})[0] };
 };
 
 const ConnectedNote = ({note}) => (
@@ -11,7 +11,7 @@ const ConnectedNote = ({note}) => (
 			type="text"
 			className="form-control"
 			id="text"
-			value={note.details.text}
+			value={note.details}
 			// onChange={this.handleChange}
 		/>
 	</div>
