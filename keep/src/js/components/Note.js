@@ -11,7 +11,9 @@ class ConnectedNote extends Component {
 		this.handleChange = this.handleChange.bind(this);
 	}
 
-	handleChange() {}
+	handleChange() {
+		
+	}
 
 	render() {
 		return (

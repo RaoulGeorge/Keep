@@ -5,6 +5,12 @@ const mapStateToProps = state => {
 	return { articles: state.articles };
 };
 
+const mapDispatchToProps = dispatch => {
+	return {
+		updateNote: note => dispatch(updateNote(note))
+	};
+};
+
 const ConnectedList = ({articles}) => (
 	<ul className = "list-group list-group-flush">
 		{articles.map(el => (
