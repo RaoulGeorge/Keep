@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { updateNote } from "../actions/index";
 
 const mapStateToProps = (state, ownProps) => {
 	return { note: state.notes.filter(note=> { return note.id == ownProps.details.id})[0] };
 };
+
+const mapDispatchToProps = dispatch => {
+	return {
+		updateNote: note => dispatch(updateNote(note))
+	};
+};
+
 
 class ConnectedNote extends Component {
 	constructor() {
@@ -11,8 +19,10 @@ class ConnectedNote extends Component {
 		this.handleChange = this.handleChange.bind(this);
 	}
 
-	handleChange() {
-		
+	handleChange(event) {
+		console.log(event);
+		// this.props.updateNote({title, id});
+
 	}
 
 	render() {
@@ -30,7 +40,7 @@ class ConnectedNote extends Component {
 	}
 }
 	
-const Note = connect(mapStateToProps)(ConnectedNote);
+const Note = connect(mapStateToProps, mapDispatchToProps)(ConnectedNote);
 
 export default Note;
 
