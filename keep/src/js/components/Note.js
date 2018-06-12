@@ -1,24 +1,6 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { updateNote } from "../actions/index";
-
-const mapStateToProps = (state, ownProps) => {
-	return { note: state.notes.filter(note=> { return note.id == ownProps.details.id})[0] };
-};
-
-const mapDispatchToProps = dispatch => {
-	return {
-		updateNote: note => dispatch(updateNote(note))
-	};
-};
-
 
 class ConnectedNote extends Component {
-	constructor() {
-		super();
-
-		this.handleChange = this.handleChange.bind(this);
-	}
 
 	handleChange(event) {
 		this.props.updateNote({details: event.target.value, id: this.props.note.id});
