@@ -16,13 +16,12 @@ const mapDispatchToProps = dispatch => {
 class ConnectedNote extends Component {
 	constructor() {
 		super();
+
 		this.handleChange = this.handleChange.bind(this);
 	}
 
 	handleChange(event) {
-		console.log(event);
-		// this.props.updateNote({title, id});
-
+		this.props.updateNote({details: event.target.value, id: this.props.note.id});
 	}
 
 	render() {

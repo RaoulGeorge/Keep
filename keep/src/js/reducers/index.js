@@ -10,7 +10,7 @@ const rootReducer = (state = initialState, action) => {
 			return {
 				...state,
 				notes: state.notes.map(
-					(note, i) => note.id == action.payload.id ? {...note, details: action.payload.details}
+					note => note.id == action.payload.id ? {...note, details: action.payload.details}
 															  : note
 				)
 			};
